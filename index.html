@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro Básico</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Cadastro Básico</h1>
+
+        <form action="gravarCliente.php" method="get" id="cadastroForm">
+            <div class="form-section" id="dados-pessoais">
+                <h2>Dados Pessoais</h2>
+                Nome:
+                <input type="text" name="nome" maxlength="200" size="60" placeholder="Informe seu nome">
+                <br><br>
+
+                Nascimento:
+                <input type="date" name="nascimento">
+                <br><br>
+
+                <fieldset>
+                    <legend>Sexo</legend>
+                    <input type="radio" name="sexo" value="Masculino"> Masculino
+                    <input type="radio" name="sexo" value="Feminino" checked> Feminino
+                </fieldset>
+                <br>
+
+                Estado Civil:
+                <select name="estadoCivil">
+                    <option value="">Escolha</option>
+                    <option value="Solteiro">Solteiro</option>
+                    <option value="Casado">Casado</option>
+                    <option value="Separado">Separado</option>
+                    <option value="Divorciado">Divorciado</option>
+                    <option value="Viúvo">Viúvo</option>
+                </select>
+                <br><br>
+                <button type="button" class="next-button" data-next="contato">Próximo</button>
+            </div>
+
+            <div class="form-section" id="contato" style="display: none;">
+                <h2>Dados para contato</h2>
+                e-mail:
+                <input type="text" name="email" placeholder="Informe seu email" maxlength="200" size="60">
+                <br><br>
+
+                <div>
+                    Telefone:
+                    <br>
+                    <input type="number" name="ddd1" min="0" max="99" placeholder="DDD">
+                    <input type="number" name="telefone1" min="0" max="999999999" placeholder="">
+                    Tipo:
+                    <select name="tipo1">
+                        <option value="">Escolha</option>
+                        <option value="Residencial">Residencial</option>
+                        <option value="Celular">Celular</option>
+                        <option value="Comercial">Comercial</option>
+                        <option value="Recados">Recados</option>
+                    </select>
+                </div>
+                <br><br>
+
+                <div>
+                    Telefone:
+                    <br>
+                    <input type="number" name="ddd2" min="0" max="99" placeholder="DDD">
+                    <input type="number" name="telefone2" min="0" max="999999999" placeholder="">
+                    Tipo:
+                    <select name="tipo2">
+                        <option value="">Escolha</option>
+                        <option value="Residencial">Residencial</option>
+                        <option value="Celular">Celular</option>
+                        <option value="Comercial">Comercial</option>
+                        <option value="Recados">Recados</option>
+                    </select>
+                </div>
+                <br><br>
+
+                <br><br>
+                <div class="button-container">
+                    <button type="button" class="prev-button" data-prev="dados-pessoais">Anterior</button>
+                    <button type="button" class="next-button" data-next="observacoes">Próximo</button>
+                </div>
+            </div>
+
+            <div class="form-section" id="observacoes" style="display: none;">
+                <h3>Observações</h3>
+                <textarea name="obs" placeholder="Insira suas observações aqui" rows="8" cols="90" maxlength="500"></textarea>
+                <br><br>
+                <div class="button-container end">
+                    <button type="button" class="prev-button" data-prev="contato">Anterior</button>
+                    <input type="submit" value="Enviar Dados">
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script src="script/script.js"></script>
+</body>
+</html>
